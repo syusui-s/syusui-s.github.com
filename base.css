@@ -1,7 +1,9 @@
-html{
+/* BASE.CSS */
+body{
 	width:80%;
 	margin:auto;
 	color:#333333;
+	font-size:15px;
 }
 
 hr{
@@ -10,11 +12,11 @@ hr{
 }
 
 h1{
-	font-size:120%;
+	font-size:1.2em;
 }
 
 h2{
-	font-size:110%;
+	font-size:1.1em;
 	margin: 1em 0 0.5em 0.5em;
 	padding:0.25em 0.25em 0.25em 0.5em;
 	border:dashed 1px #000000; 
@@ -29,5 +31,5 @@ p{
 
 .align-right{
 	text-align:right;
-	margin-top:-2em;
+	margin-top:-30px;
 }
