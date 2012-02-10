@@ -1,4 +1,4 @@
-/* BASE.CSS */
+/* BASE.CSS       Valid CSS3  */
 body{
 	width:80%;
 	margin:auto;
@@ -16,20 +16,29 @@ h1{
 }
 
 h2{
-	font-size:1.1em;
+	font-size: 1.1em;
 	margin: 1em 0 0.5em 0.5em;
-	padding:0.25em 0.25em 0.25em 0.5em;
-	border:dashed 1px #333333; 
+	padding: 0.25em 0.25em 0.25em 0.5em;
+	border: dashed 1px #333333; 
 	border-radius: 5px;	
 }
 
 p{
 	text-indent: 0em;
 	padding: 0 1em;
-	margin: 0 0 0.5em 0;	
+	margin-bottom: 0.5em;
+}
+
+ul{
+	margin: 0 0 0.5em -1em;
+	list-style-type: none;
+}
+
+li{
+	margin-bottom: 0.25em;
 }
 
 .align-right{
-	text-align:right;
-	margin-top:-30px;
+	text-align: right;
+	margin-top: -30px;
 }
