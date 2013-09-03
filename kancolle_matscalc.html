@@ -219,21 +219,21 @@ function onloadFunc(){
 <input type="button" value="予定時刻に現在時刻を入れる" onclick="setInputTimeNow('end')">
 </form>
 <hr>
-<table border="1">
-	<tr>
-		<th>燃料</th>
-		<th>弾薬</th>
-		<th>鋼材</th>
-		<th>ボーキサイト</th>
-	</tr>
-	<tr>
-		<td><form><input name="fuel" type="number"></form></td>
-		<td><form><input name="ammo" type="number"></form></td>
-		<td><form><input name="steel" type="number"></form></td>
-		<td><form><input name="bauxite" type="number"></form></td>
-	</tr>
-</table>
 <form>
+	<table border="1">
+		<tr>
+			<th>燃料</th>
+			<th>弾薬</th>
+			<th>鋼材</th>
+			<th>ボーキサイト</th>
+		</tr>
+		<tr>
+			<td><input name="fuel" type="number"></td>
+			<td><input name="ammo" type="number"></td>
+			<td><input name="steel" type="number"></td>
+			<td><input name="bauxite" type="number"></td>
+		</tr>
+	</table>
 	<input type="button" value="資材値を設定" onclick="setMatsData">
 	<input type="button" value="表をクリア" onclick="clearMatsTable()">
 </form>
