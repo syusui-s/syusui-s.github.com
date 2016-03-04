@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>やる気がふる</title>
+
+<style>
+body {
+	width: 99%;
+}
+
+div.fall {
+	position: absolute;
+}
+
+div#bottom {
+	position: absolute;
+	bottom: 0;
+	background-color: #000;
+	width: 99%;
+	height: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 900;
+}
+</style>
+
+<script>
+'use strict';
+
+function onLoad() {
+	const msg  = 'やる気';
+	const body = document.body;
+
+	var list  = [];
+	var height = 0;
+
+	let update = (e) => {
+		list.forEach((e) => {
+			e.topValue += e.topIncrement;
+			e.sinValue += e.sinIncrement;
+			e.leftValue = (window.innerWidth - 50) * e.leftBaseValue + Math.sin(e.sinValue) * 10;
+
+			if (e.topValue > height) {
+				let index = list.indexOf(e);
+				if (index > -1) {
+					list.splice(index, 1);
+					document.body.removeChild(e);
+				}
+				else { console.log('呼ばれないはず'); }
+			} else {
+				e.style.top = e.topValue + 'px';
+				e.style.left = e.leftValue + 'px';
+			}
+		});
+	};
+	
+	let addElem = () => {
+		height = window.innerHeight - 60;
+
+		if (Math.random() > 0.5) {
+			let elem = document.createElement('div');
+			elem.textContent = msg;
+			elem.className = 'fall';
+			elem.topValue = 0;
+			elem.leftBaseValue = Math.random();
+			elem.sinValue = 0;
+			elem.topIncrement = Math.random() * 2;
+			elem.sinIncrement = Math.random() * 0.1 * (Math.random() > 0.5 ? 1 : -1);
+			
+			list.push(elem);
+			update();
+			document.body.appendChild(elem);
+		}
+	};
+
+	setInterval(addElem, 100);
+
+	setInterval(update, parseInt(1000/30))
+}
+
+window.onload = onLoad;
+</script>
+
+</head>
+
+<body>
+	<div id="bottom"> やる気消失ポイント </div>
+</body>
+
+</html>
