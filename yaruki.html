@@ -15,6 +15,11 @@ div.fall {
 	position: absolute;
 }
 
+div.fall > a {
+	color: #000;
+	text-decoration: none;
+}
+
 div#bottom {
 	position: absolute;
 	bottom: 0;
@@ -32,7 +37,8 @@ div#bottom {
 'use strict';
 
 function onLoad() {
-	const msg  = 'やる気';
+	const msg = 'やる気';
+	const url = 'https://www.google.co.jp/webhp?hl=ja&tab=ww#hl=ja&q=%E3%82%84%E3%82%8B%E6%B0%97%E3%81%AE%E5%87%BA%E3%81%97%E6%96%B9';
 	const body = document.body;
 
 	var list  = [];
@@ -63,7 +69,11 @@ function onLoad() {
 
 		if (Math.random() > 0.5) {
 			let elem = document.createElement('div');
-			elem.textContent = msg;
+			let link = document.createElement('a');
+			link.href = url;
+			link.target = '_blank';
+			link.textContent = msg;
+			elem.appendChild(link);
 			elem.className = 'fall';
 			elem.topValue = 0;
 			elem.leftBaseValue = Math.random();
