@@ -22,7 +22,7 @@
 	function duplicate(node) {
 		const clone = node.cloneNode(true);
 		setBGColor(clone);
-		clone.addEventListener('mouseup', dupHandler);
+		clone.addEventListener('click', dupHandler);
 		node.parentNode.insertBefore(clone, node.nextSibling);
 	};
 
@@ -54,7 +54,7 @@
 		if (buttons.length >= 0x20) {
 			window.clearTimeout(timeout_id);
 			Array.prototype.forEach.call(buttons, (button, index) => {
-				button.removeEventListener('mouseup', dupHandler);
+				button.removeEventListener('click', dupHandler);
 				button.classList.add('button-text');
 				button.textContent = txt[index % txt.length];
 			});
@@ -67,5 +67,5 @@
 	timeout_id = removeButtonsPeriodically();
 
 	const node  = document.querySelector('button.button:nth-child(1)');
-	node.addEventListener('mouseup', dupHandler);
+	node.addEventListener('click', dupHandler);
 })();
