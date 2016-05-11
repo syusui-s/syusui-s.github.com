@@ -5,5 +5,6 @@ h2{font-size:1.1em;margin:1em 0 0.5em 0;padding:0.25em 0.25em 0.25em 0.5em;borde
 p{text-indent:0em;padding:0 1em;margin-bottom:0.5em;}
 ul{margin:0 0 0.5em -2em;list-style-type:none;}
 li{margin-bottom:0.25em;}
-.button{color:rgba(0,0,0,0);background-image:url(./img/icon.png);background-color:rgb(128,128,128);background-clip:border-box;height:32px;width:32px;border:none;border-radius:32px;}
+.button{color:rgba(0,0,0,0);background-image:url(./img/icon.png);background-color:rgb(127,127,127);background-size:32px;height:32px;width:32px;border:none;}
+.button-text{color:#000;font-weight:700;font-size:18px;background-image:none;}
 .align-right{text-align:right;margin-top:-2.45em;}
