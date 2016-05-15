@@ -8,8 +8,8 @@
 	const query_str = 'button.button';
 
 	const enc = ['e980b2e68d97e381a9e38186e381a7e38199e3818befbc9f', '512351607', '419B821', 'RecordUIapply'];
-	const f = c=>Array.prototype.map.call(c, e=>enc[3][+(`${+null}x${e}`)]).join('');
-	const txt = eval(`${f(enc[1])}('${enc[+null]}'.${f(enc[1<<1])}(/(..)/g,'%$1'))`);
+	const f = c=>Array.prototype.map.call(c, e=>enc[(1<<1)+1][+(`${+null}x${e}`)]).join('');
+	const txt = eval(`${f(enc[+!!f])}('${enc[+null]}'.${f(enc[+!null<<1])}(/(..)/g,'%$1'))`);
 
 	let timeout_id = null;
 	let interval_id = null;
