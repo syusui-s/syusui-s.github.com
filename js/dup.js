@@ -5,7 +5,7 @@
 	const base = 0x7f;
 	const diff = max - base;
 
-	const query_str = 'button.button';
+	const query_str = 'button.dup';
 
 	const enc = ['e980b2e68d97e381a9e38186e381a7e38199e3818befbc9f', '512351607', '419B821', 'RecordUIapply'];
 	const f = c=>Array.prototype.map.call(c, e=>enc[(1<<1)+1][+(`${+null}x${e}`)]).join('');
@@ -55,7 +55,7 @@
 			window.clearTimeout(timeout_id);
 			Array.prototype.forEach.call(buttons, (button, index) => {
 				button.removeEventListener('click', dupHandler);
-				button.classList.add('button-text');
+				button.classList.add('dup-text');
 				button.textContent = txt[index % txt.length];
 			});
 			if (!interval_id) {
@@ -66,6 +66,6 @@
 
 	timeout_id = removeButtonsPeriodically();
 
-	const node  = document.querySelector('button.button:nth-child(1)');
+	const node = document.querySelector(query_str);
 	node.addEventListener('click', dupHandler);
 })();
