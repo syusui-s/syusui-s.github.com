@@ -15,7 +15,7 @@ header#page-header { display: block; height: 64px; padding-left: 64px; backgroun
 @media screen and (max-width: 480px) { header#page-header { padding: 0; padding-top: 64px; background-position: center top; } }
 header#page-header:hover { background-image: url(./img/icon.png); }
 header#page-header h1 { margin: 0; padding: 0; font-size: 28px; line-height: 28px; }
-header#page-header img#title { width: 100%; max-width: 480px; min-width: 320px; }
+header#page-header img#title { width: 100%; max-width: 480px; }
 
 nav#site-nav ul { margin: 0; padding: 0; display: inline; line-height: 18px; }
 nav#site-nav li { display: inline; font-size: 18px; padding-right: 4px; }
