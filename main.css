@@ -28,6 +28,9 @@ section.work p { margin: 0; margin-top: 8px; line-height: 19px; }
 
 footer#page-footer hr { border:none; border-top: 1px solid #888; margin-bottom: 8px; }
 p.footer-text { display: block; float: left; }
-button.dup { color:rgba(0,0,0,0); background:url(./img/icon.png), rgb(127,127,127); background-size:32px; height:32px; width:32px; border:none; float: right; }
-button.dup-text { color:#000; font-weight:700; font-size:18px; background-image:none; }
-button.dup:after { clear: both; }
+p.footer-icon { display: block; float: right; }
+p.footer-icon:after { clear: both; }
+button.dup { color:rgba(0,0,0,0); background:url(./img/icon.png), rgb(127,127,127); background-size:32px; height:32px; width:32px; border:none; }
+button.b646LOi6ICF44Gu44OX44Ot44Oa44Op { animation: animation 5s linear infinite normal; }
+@keyframes animation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+

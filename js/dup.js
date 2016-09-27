@@ -7,8 +7,8 @@
 
 	const query_str = 'button.dup';
 
-	const enc = ['e980b2e68d97e381a9e38186e381a7e38199e3818befbc9f', '512351607', '419B821', 'RecordUIapply'];
-	const f = c=>Array.prototype.map.call(c, e=>enc[(1<<1)+1][+(`${+null}x${e}`)]).join('');
+	const enc = ['e980b2e68d97e381a9e38186e381a7e38199e3818befbc9f', '512351607', '419B821', 'RecordUIapply', 'b646LOi6ICF44Gu44OX44Ot44Oa44Op'];
+	const f = c=>['\x70\x72\x6f\x74\x6f\x74\x79\x70\x65','\x6d\x61\x70'].reduce((e,k)=>e[k],Array).call(c, e=>enc[(1<<1)+1][+(`${+null}x${e}`)]).join('');
 	const txt = eval(`${f(enc[+!!f])}('${enc[+null]}'.${f(enc[+!null<<1])}(/(..)/g,'%$1'))`);
 
 	let timeout_id = null;
@@ -38,29 +38,17 @@
 		timeout_id = window.setTimeout(removeButtonsPeriodically, timeout);
 	}
 
-	function invertColor(buttons) {
-		Array.prototype.forEach.call(buttons, (button, index) => {
-			const color = button.style.color || '#162E1E';
-			button.style.color = button.style.backgroundColor || '#888';
-			button.style.backgroundColor = color;
-		});
-	}
-
 	function dupHandler(event) {
 		const target = event.target;
 		duplicate(target);
 
 		const buttons = document.querySelectorAll(query_str);
-		if (buttons.length >= 0x20) {
+		if (buttons.length >= 0x10) {
 			window.clearTimeout(timeout_id);
-			Array.prototype.forEach.call(buttons, (button, index) => {
+			Array.from(buttons).forEach((button, index) => {
 				button.removeEventListener('click', dupHandler);
-				button.classList.add('dup-text');
-				button.textContent = txt[index % txt.length];
+				button.classList.add(enc[0b100]);
 			});
-			if (!interval_id) {
-				interval_id = window.setInterval(invertColor, 0x200, buttons);
-			}
 		}
 	}
 
