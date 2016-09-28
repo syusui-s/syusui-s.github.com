@@ -7,11 +7,12 @@ h3 { font-size: 16px; }
 h2::before { content: "# "; }
 h3::before { content: "## "; }
 p { margin-top: 8px; margin-bottom: 8px; line-height: 19px; }
-ul.no-style, ol.no-style { list-style: none; line-height: 28px; margin-bottom: 8px; }
-dt { font-weight: bold; }
-dd { margin-left: 40px; }
+ul.no-style, ol.no-style, dl.oneline { list-style: none; line-height: 28px; margin-bottom: 8px; }
+dl.oneline dt { display: block; float: left; }
+dl.oneline dd::before { margin: 0 4px; content: ":"; }
+dl.oneline dd { display: block; float: none; }
 
-header#page-header { display: block; height: 64px; padding-left: 64px; background-image: url(./img/leaf.png); background-repeat: no-repeat; background-size: 56px; background-position: left top; }
+header#page-header { display: block; margin-bottom: 4px; padding-left: 64px; background-image: url(./img/leaf.png); background-repeat: no-repeat; background-size: 56px; background-position: left top; }
 @media screen and (max-width: 480px) { header#page-header { padding: 0; padding-top: 64px; background-position: center top; } }
 header#page-header:hover { background-image: url(./img/icon.png); }
 header#page-header h1 { margin: 0; padding: 0; font-size: 28px; line-height: 30px; }
@@ -29,7 +30,7 @@ section.work p { margin: 0; margin-top: 8px; line-height: 19px; }
 footer#page-footer hr { border:none; border-top: 1px solid #888; margin-bottom: 8px; }
 p.footer-text { display: block; float: left; }
 p.footer-icon { display: block; float: right; }
-p.footer-icon:after { clear: both; }
+p.footer-icon::after { clear: both; }
 button.dup { color:rgba(0,0,0,0); background:url(./img/icon.png), rgb(127,127,127); background-size:32px; height:32px; width:32px; border:none; }
 button.b646LOi6ICF44Gu44OX44Ot44Oa44Op { animation: animation 5s linear infinite normal; }
 @keyframes animation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
