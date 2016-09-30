@@ -32,6 +32,5 @@ p.footer-text { display: block; float: left; }
 p.footer-icon { display: block; float: right; }
 p.footer-icon::after { clear: both; }
 button.dup { color:rgba(0,0,0,0); background:url(./img/icon.png), rgb(127,127,127); background-size:32px; height:32px; width:32px; border:none; }
-button.b646LOi6ICF44Gu44OX44Ot44Oa44Op { animation: animation 5s linear infinite normal; }
-@keyframes animation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
+button.speed-tube { animation: animation 200ms ease 1 normal; }
+@keyframes animation { 0% { opacity: 0.5; } 50% { opacity: 1.0; } 100% { opacity: 0.5; } }

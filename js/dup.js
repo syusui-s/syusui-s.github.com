@@ -7,7 +7,7 @@
 
 	const query_str = 'button.dup';
 
-	const enc = ['e980b2e68d97e381a9e38186e381a7e38199e3818befbc9f', '512351607', '419B821', 'RecordUIapply', 'b646LOi6ICF44Gu44OX44Ot44Oa44Op'];
+	const enc = ['e980b2e68d97e381a9e38186e381a7e38199e3818befbc9f', '512351607', '419B821', 'RecordUIapply'];
 	const f = c=>['\x70\x72\x6f\x74\x6f\x74\x79\x70\x65','\x6d\x61\x70'].reduce((e,k)=>e[k],Array).call(c, e=>enc[(1<<1)+1][+(`${+null}x${e}`)]).join('');
 	const txt = eval(`${f(enc[+!!f])}('${enc[+null]}'.${f(enc[+!null<<1])}(/(..)/g,'%$1'))`);
 
@@ -44,11 +44,25 @@
 
 		const buttons = document.querySelectorAll(query_str);
 		if (buttons.length >= 0x10) {
+			buttons[0].parentNode.style.backgroundColor = '#111';
 			window.clearTimeout(timeout_id);
 			Array.from(buttons).forEach((button, index) => {
 				button.removeEventListener('click', dupHandler);
-				button.classList.add(enc[0b100]);
+				button.style.opacity = '0.5';
 			});
+
+			let i = 0;
+			let j = 0;
+			let k = 0;
+			let l = 'speed-tube';
+			window.setInterval(() => {
+				if (i >= buttons.length) { i = 0; }
+				buttons[k].classList.remove(l);
+				buttons[i].classList.add(l);
+				k = j;
+				j = i;
+				i += 1;
+			}, 108);
 		}
 	}
 
