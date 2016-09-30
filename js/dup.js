@@ -4,14 +4,9 @@
 	const max  = 0xff;
 	const base = 0x7f;
 	const diff = max - base;
-
 	const query_str = 'button.dup';
 
-	const enc = ['e980b2e68d97e381a9e38186e381a7e38199e3818befbc9f', '512351607', '419B821', 'RecordUIapply'];
-	const f = c=>['\x70\x72\x6f\x74\x6f\x74\x79\x70\x65','\x6d\x61\x70'].reduce((e,k)=>e[k],Array).call(c, e=>enc[(1<<1)+1][+(`${+null}x${e}`)]).join('');
-	const txt = eval(`${f(enc[+!!f])}('${enc[+null]}'.${f(enc[+!null<<1])}(/(..)/g,'%$1'))`);
-
-	let timeout_id = null;
+	let remove_button_id = null;
 	let interval_id = null;
 
 	function setBGColor(node) {
@@ -29,13 +24,13 @@
 	function removeButtonsPeriodically() {
 		const buttons = document.querySelectorAll(query_str);
 		const len = buttons.length;
-		let timeout = 1000;
+		let timeout = 800;
 
 		if (len > 1) {
 			buttons[len - 1].remove();
 			timeout /= Math.sqrt(len);
 		}
-		timeout_id = window.setTimeout(removeButtonsPeriodically, timeout);
+		remove_button_id = window.setTimeout(removeButtonsPeriodically, timeout);
 	}
 
 	function dupHandler(event) {
@@ -45,7 +40,7 @@
 		const buttons = document.querySelectorAll(query_str);
 		if (buttons.length >= 0x10) {
 			buttons[0].parentNode.style.backgroundColor = '#111';
-			window.clearTimeout(timeout_id);
+			window.clearTimeout(remove_button_id);
 			Array.from(buttons).forEach((button, index) => {
 				button.removeEventListener('click', dupHandler);
 				button.style.opacity = '0.5';
@@ -65,9 +60,13 @@
 			}, 108);
 		}
 	}
-
-	timeout_id = removeButtonsPeriodically();
+	
+	function initialHandler(ev) {
+		ev.target.removeEventListener('click', initialHandler);
+		ev.target.addEventListener('click', dupHandler);
+		removeButtonsPeriodically();
+	}
 
 	const node = document.querySelector(query_str);
-	node.addEventListener('click', dupHandler);
+	node.addEventListener('click', initialHandler);
 })();
