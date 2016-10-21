@@ -1,0 +1,72 @@
+==================================================================
+https://keybase.io/syusui_s
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://syusui-s.github.io
+  * I am syusui_s (https://keybase.io/syusui_s) on keybase.
+  * I have a public key with fingerprint 0AC8 2BCD E410 214C 2116  2FB5 9E40 A52F 2CB9 BE6A
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01011c27755a7bebaaf3359f4c48287a158ce84d592a446f382d8e08ed0b8b1bf2ef0a",
+            "fingerprint": "0ac82bcde410214c21162fb59e40a52f2cb9be6a",
+            "host": "keybase.io",
+            "key_id": "9e40a52f2cb9be6a",
+            "kid": "01011c27755a7bebaaf3359f4c48287a158ce84d592a446f382d8e08ed0b8b1bf2ef0a",
+            "uid": "2e06627d2ec4ab588b705595e19e8019",
+            "username": "syusui_s"
+        },
+        "revoke": {
+            "sig_ids": [
+                "08eb9b440493a461c0bbb6f15d28a91325b86150535f2825c31dd1fbb71a901c0f"
+            ]
+        },
+        "service": {
+            "hostname": "syusui-s.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1477037822,
+    "expire_in": 157680000,
+    "prev": "95c3754f681ab450aafcd235d426da7fe546017567122619cdc9f08c09586a84",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUl1sVEUY3a2I2wYRjfKgqGRMakKWdmbuzL1zNwZrUFMSIMYEAii5mb+7vd26
+d7v3bqG2+0L4CWhsJfyEkBAgYEF4IsG0xfhb9GEfipGEmBJLCQUbLBo0NipR5xZ8
+MPGReZnMzPnOOd/5pv/hB1KZ9KGW483ZoU/a07UpkVpXP5ruASJU3SDXAwp6dtMd
+SkexVwgUyAGIIEISOw6l3BFacO5bFnV9IgnDzOGIMqkZUdTFnBDbtxhWTEOmFRRM
+IOFj7UMOssAPinldLpWDYpzQcsmwkEoTBDEiEiNkY19QVxPIKfaxFK7QdlLYFkZJ
+hTEneKSbgtDcmYM3a+9/8PfZd2WWDmto29hRWEvCBWVMOJBSl2rkagaRmwAjXS7y
+t7RBR92VqBJ4EahmQVl3hQWd5BoFeWM6Ark3gNExfgmBxLU4sZGEQgjbR1Rhxl1k
+YSqYjSikFvUxw1RaSCnkC+Eg7kID98FGw20UuwI5S56k9B/1pVFTPojbKuJuYqVy
+GIcy7DDvbXFcinLG2zCIu0tJxSYtvHtcngiKyozKlHTpchSERZBDRkrGQUKOiONA
+y2EYZ4HeXArK2gsSBHVsBs1KhHRXMhjj2aHEtxniglBo8pcKW1QRbCvu+JoSGyKH
+2g7C2EauVNL1IZPQpczmjICku85iCHI0C2KeT/oK8kUeV8oaVBt2phfNSaUzqbkP
+1iV/ONVQv+Dfj32m9aG/32yYN9D6WOfuE1/cfvfi6PllazqenvlmYv7a5yfa7dq2
+6ujqTw/QWss5teHoHaeu76/3D6YKZ1ctfaflyb7ffrw99PviIx/0tjbv+eX89GBm
+8uvexd65JTMjjcN7l1VXePv9j6+dLF0YPPxh4aOrO7/sfz3TkR1v3Xojd+zSC6cu
+zPzx7NSdU9VdmfHRZ46u//ny+OfvBZv+JLuaal8N1s9ZsuGRJ0jTzf6nmgc29q7U
+t1KN7Zfmbjt5Mb5SN43b5y2fOr3uu7HLLx9aBBoXrj/7Wd312lhvc+ertzr3jV3J
+Hf9pYCjc0ZceeTQeiV/q+Xb6hy3e9teWT0zyt4f3Fh8HtPZiZmJy1dZfv3/ulX8A
+=/3jF
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/syusui_s
+
+==================================================================
