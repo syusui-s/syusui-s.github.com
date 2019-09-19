@@ -52,7 +52,6 @@
 	<dt>PGP Fingerprint</dt>
 	<dd>0AC8 2BCD E410 214C 2116  2FB5 9E40 A52F 2CB9 BE6A
 	(<a href="https://sks-keyservers.net/pks/lookup?op=vindex&amp;search=syusui.s%40gmail.com&amp;fingerprint=on&amp;exact=on">SKS</a>,
-	<a href="http://pgp.nic.ad.jp/pks/lookup?op=index&amp;search=syusui.s%40gmail.com&amp;fingerprint=on">JPNIC</a>,
 	<a href="https://keybase.io/syusui_s">Keybase</a>) </dd>
 </dl>
 </section>
@@ -195,8 +194,19 @@
 <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fsyusui-s.github.com%2F">Valid HTML5!</a>
 </p>
 <p class="footer-icon">
-<button class="change" type="button" lang="ja">話</button>
+<button class="t">😐</a>
 </p>
 </footer>
+
+<script>
+  window.t = (() => {
+    const match = (regex, action) => msg => regex.test(msg) && action(msg);
+    const respond = msg => () => console.log(`%c　%c ${msg}`, 'font-size:32px; background:url(./img/icon.png) no-repeat;', '');
+    const handlers = [ match(/Hi/, respond("こんにちは")) ]
+    
+    return { talk: msg => handlers.forEach(f => f(msg)) };
+  })();
+  document.body.querySelector('.t').addEventListener('click', ev => t.talk('Hi'));
+</script>
 </body>
 </html>

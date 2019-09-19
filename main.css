@@ -4,12 +4,12 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; margin: 8px 0; padding: 4px 0; }
 h1 { font-size: 22px; line-height: 30px; }
 h2 { font-size: 20px; line-height: 26px; }
 h3 { font-size: 18px; line-height: 24px; }
-h2 { border-bottom: 1px solid #555; }
+h2 { border-bottom: 1px solid #222; }
 p { margin-top: 8px; margin-bottom: 8px; line-height: 19px; }
 ul, ol, dl { line-height: 24px; margin-bottom: 8px; }
 ul.simple, ol.simple, dl.simple { list-style: none; }
 dl > dt { font-weight: bold; }
-dl > dd { margin-left: 40px; }
+dl > dd { margin-left: 40px; margin-bottom: 8px; }
 section { margin-top: 24px; }
 
 header#page-header { display: block; margin-bottom: 4px; text-align: center; }
@@ -21,7 +21,7 @@ nav#site-nav li { display: inline; font-size: 18px; padding-right: 4px; }
 nav#site-nav a { color: #111; text-decoration: underline; }
 nav#site-nav li:hover a { color: #444; }
 
-section.work { margin-top: 8px; padding: 8px 16px; border: 1px solid #aaa; border-radius: 5px; }
+section.work { margin-top: 0; margin-bottom: 16px; margin-left: 40px; }
 section.work h4 { font-size: 16px; line-height: 19px; }
 section.work p { margin: 0; margin-top: 8px; line-height: 19px; }
 
@@ -29,4 +29,7 @@ footer#page-footer hr { border:none; border-top: 1px solid #888; margin-bottom: 
 p.footer-text { display: block; float: left; }
 p.footer-icon { display: block; float: right; }
 p.footer-icon::after { clear: both; }
-button.change { color:rgba(0,0,0,0); background:url(./img/icon.png), rgb(127,127,127); background-size:32px; height:32px; width:32px; border:none; }
+.t { display: inline-block; color:rgba(0,0,0,0); background:no-repeat center/contain url(./img/icon.png), rgb(127,127,127); height: 32px; width: 32px; border: none; }
+.t:hover { animation: animation 1.8s linear infinite normal; border-radius: 16px; background-size: 24px; transition: all 0.2s; }
+.t:not(:hover) { transition: all 0.1s; }
+@keyframes animation { 100% { transform: rotate(360deg); } }
