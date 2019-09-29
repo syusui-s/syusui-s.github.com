@@ -201,10 +201,33 @@
 <script>
   window.t = (() => {
     const match = (regex, action) => msg => regex.test(msg) && action(msg);
-    const respond = msg => () => console.log(`%c　%c ${msg}`, 'font-size:32px; background:url(./img/icon.png) no-repeat;', '');
-    const handlers = [ match(/Hi/, respond("こんにちは")) ]
+    const when = (predicate, action) => msg => predicate(msg) && action(msg);
+    const respond = msg => () =>
+      console.log(
+        `%c　%c◀%c ${msg}`,
+        `line-height: 32px;
+         padding-left: 24px;
+         background: url(https://syusui-s.github.io/img/icon.png) center/32px no-repeat;
+        `,
+        `color: #ddd;
+         user-select: none;
+        `,
+        `margin: 0;
+         padding: 4px 6px 2px 0;
+         background: #ddd;
+         border-radius: 4px;
+         color: #222;
+         font-weight: bold;
+        `,
+      ) || true;
+    const handlers = [
+      match(/Hi|おはよう|こんばんは|こんにちは/, respond("こんにちは。")),
+      match(/ご(機嫌|きげん)よう/, respond("ごきげんよう")),
+      respond('...?'),
+    ]
+    const state = { repeatCount: 0 };
     
-    return { talk: msg => handlers.forEach(f => f(msg)) };
+    return { talk: msg => handlers.find(f => f(msg))};
   })();
   document.body.querySelector('.t').addEventListener('click', ev => t.talk('Hi'));
 </script>
