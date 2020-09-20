@@ -18,7 +18,7 @@
 <body>
 
 <header id="page-header">
-	<h1 lang="ja"><img id="title" src="./img/title.png" alt="靄谷 秋翠" width="412" height="88"></h1>
+	<h1 lang="ja"><img id="title" src="./img/title.png" alt="靄谷 秋翠" width="412" height="88" loading="lazy"></h1>
 </header>
 
 <section>
@@ -195,7 +195,7 @@
 <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fsyusui-s.github.com%2F">Valid HTML5!</a>
 </p>
 <p class="footer-icon">
-<button class="t">😐</a>
+<button class="t">😐</button>
 </p>
 </footer>
 
@@ -203,7 +203,7 @@
   window.t = (() => {
     const match = (regex, action) => msg => regex.test(msg) && action(msg);
     const when = (predicate, action) => msg => predicate(msg) && action(msg);
-    const respond = msg => () =>
+    const respond = msg => () => {
       console.log(
         `%c　%c◀%c ${msg}`,
         `line-height: 32px;
@@ -220,17 +220,44 @@
          color: #222;
          font-weight: bold;
         `,
-      ) || true;
+      );
+      return true;
+    };
     const handlers = [
-      match(/Hi|おはよう|こんばんは|こんにちは/, respond("こんにちは。")),
-      match(/ご(機嫌|きげん)よう/, respond("ごきげんよう")),
+      match(/^__WELCOME__$/, respond('こんにちは。t.talk("")でおしゃべりできるよ。')),
+      match(/Hi|Hey|Yahoo/i, respond('やあ。')),
+      match(/おは(よう)?|おっはー/, respond('おはよう。')),
+      match(/こんにちは/, respond('こんにちは。')),
+      match(/こんばんは/, respond('こんばんは。')),
+      match(/おやすみ/, respond('おやすみ。いい夢を。')),
+      match(/ご(機嫌|きげん)よう/, respond("ごきげんよう。")),
+      match(/誰|だれ|名前|なまえ/, respond("わたしの名前は　　　だよ。")),
+      match(/ごめん/, respond("いいよ。")),
       respond('...?'),
-    ]
-    const state = { repeatCount: 0 };
+    ];
+    const state = { broken: false, repeatCount: 0, lastMessage: null };
+    const talk = (msg) => {
+      state.repeatCount = msg === state.lastMessage ? state.repeatCount + 1 : 0;
+      state.lastMessage = msg;
+      if (state.repeatCount >= 15) {
+        delete window.t;
+        throw new Error("Too many repeated requests.");
+      }
+      if (state.repeatCount >= 10) {
+        state.broken = true;
+        throw new Error("Too noisy.");
+      }
+      if (state.repeatCount >= 5) {
+        respond("うーるーさーいー")();
+        return;
+      }
+      handlers.find(f => f(msg));
+      return true;
+    };
     
-    return { talk: msg => handlers.find(f => f(msg))};
+    return { talk };
   })();
-  document.body.querySelector('.t').addEventListener('click', ev => t.talk('Hi'));
+  document.body.querySelector('.t').addEventListener('click', () => t.talk('__WELCOME__'));
 </script>
 </body>
 </html>
