@@ -14,7 +14,7 @@ section { margin-top: 24px; }
 
 header#page-header { display: block; margin-bottom: 4px; text-align: center; }
 header#page-header h1 { margin: 0; padding: 0; font-size: 28px; line-height: 30px; }
-header#page-header img#title { width: 100%; max-width: 412px; }
+header#page-header img#title { width: 100%; max-width: 412px; height: auto; }
 
 nav#site-nav ul { margin: 0; padding: 0; display: inline; line-height: 19px; }
 nav#site-nav li { display: inline; font-size: 18px; padding-right: 4px; }
