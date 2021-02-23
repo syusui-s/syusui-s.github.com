@@ -1,15 +1,16 @@
-* { padding: 0; margin: 0; }
-body { font-size: 16px; color: #202020; max-width: 800px; width: 90%; margin: auto; padding-top: 16px; font-family: sans-serif; background-color: #fff; }
+* { padding: 0; margin: 0; box-sizing: border-box; }
+body { font-size: 16px; color: #333; max-width: 800px; width: 90%; margin: auto; padding-top: 16px; font-family: sans-serif; background-color: #fff; }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; margin: 8px 0; padding: 4px 0; }
-h1 { font-size: 22px; line-height: 30px; }
-h2 { font-size: 20px; line-height: 26px; }
-h3 { font-size: 18px; line-height: 24px; }
-h2 { border-bottom: 1px solid #222; }
+h1 { font-size: 22px; line-height: 30px; color: #000; }
+h2 { font-size: 20px; line-height: 26px; border-bottom: 1px solid #222; color: #000; }
+h3 { font-size: 18px; line-height: 24px; background: #f0f0f0; }
 p { margin-top: 8px; margin-bottom: 8px; line-height: 19px; }
 ul, ol, dl { line-height: 24px; margin-bottom: 8px; }
+li { margin-left: 1em; }
 ul.simple, ol.simple, dl.simple { list-style: none; }
+ul.simple li, ol.simple li, dl.simple li { margin-left: 0; }
 dl > dt { font-weight: bold; }
-dl > dd { margin-left: 40px; margin-bottom: 8px; }
+dl > dd { margin-bottom: 12px; }
 section { margin-top: 24px; }
 
 header#page-header { display: block; margin-bottom: 4px; text-align: center; }
@@ -21,7 +22,7 @@ nav#site-nav li { display: inline; font-size: 18px; padding-right: 4px; }
 nav#site-nav a { color: #111; text-decoration: underline; }
 nav#site-nav li:hover a { color: #444; }
 
-section.work { margin-top: 0; margin-bottom: 16px; margin-left: 40px; }
+section.work { margin-top: 0; margin-bottom: 16px; }
 section.work h4 { font-size: 16px; line-height: 19px; }
 section.work p { margin: 0; margin-top: 8px; line-height: 19px; }
 
